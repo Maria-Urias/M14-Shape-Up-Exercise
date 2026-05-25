@@ -1,6 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+    background-color: #f4f4f4;
+    color: #222;
 }
 
 header {
@@ -9,6 +11,16 @@ header {
     text-align: center;
     gap: 8px;
     padding: 20px 10px;
+    background-color: #ffffff;
+}
+
+header img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    color: #2c5d86;
 }
 
 nav ul {
@@ -55,11 +67,14 @@ footer {
     padding: 15px;
     border-radius: 8px;
     gap: 10px;
+    background-color: #ffffff;
 }
 
 footer {
     justify-items: center;
     padding: 20px 10px;
+    background-color: #446688;
+    color: white;
 }
 
 /* Tablet and larger */
