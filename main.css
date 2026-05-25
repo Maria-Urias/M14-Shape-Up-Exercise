@@ -1,53 +1,33 @@
-<DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
-    <header>
-        <img src="logo.png" alt="Shape Up Logo">
-        <h1>SHAPE UP!</h1>
-        <p>Find the best fit for you</p>
-    </header>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
 
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Strength Training</a></li>
-            <li><a href="#">Cardio Exercises</a></li>
-            <li><a href="#">Stress Relief</a></li>
-            <li><a href="#">Healthy Diets</a></li>
-        </ul>
-    </nav>
+.grid-container {
+    display: grid;
+    grid-template-columns: 100%; /* Single column for mobile */
+    gap: 20px;
+    padding: 10px;
+}
 
-    <main class="grid-container">
-        <section class="content">
-            <h2>Get ready to Shape Up!</h2>
-            <p>How many times have you started...</p>
-            <blockquote>"Fitness is about so much more than exercise..."</blockquote>
-            
-            <h2>What we offer</h2>
-            <h3>Build strong muscles</h3>
-            <p>Tired of being tired? Strength training...</p>
-            <!-- Add remaining text blocks here -->
-        </section>
+.resource-box {
+    border: 2px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+}
 
-        <aside class="sidebar">
-            <div class="resource-box">
-                <h2>Additional resources</h2>
-                <ul>
-                    <li>Physical activity and health</li>
-                    <li>Stretching exercises</li>
-                    <li>Strength training</li>
-                    <li>Cardiovascular training</li>
-                    <li>Yoga workout</li>
-                </ul>
-            </div>
-        </aside>
-    </main>
+/* Large Screen Layout (Desktop) */
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 2fr 1fr; /* 2 parts content, 1 part sidebar */
+        max-width: 1000px;
+        margin: 0 auto;
+    }
 
-    <footer>
-        <p>&copy; Shape Up!</p>
-    </footer>
-</body>
-</html>
+    nav ul {
+        display: flex; /* Nav stays flex for horizontal alignment */
+        list-style: none;
+        background-color: #446688;
+        padding: 10px;
+    }
+}
