@@ -3,31 +3,110 @@ body {
     margin: 0;
 }
 
+header {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    gap: 8px;
+    padding: 20px 10px;
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #446688;
+}
+
+nav li {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav li:first-child {
+    border-top: none;
+}
+
+nav a {
+    display: block;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
 .grid-container {
     display: grid;
-    grid-template-columns: 100%; /* Single column for mobile */
+    grid-template-columns: 1fr;
     gap: 20px;
     padding: 10px;
+}
+
+.content,
+.sidebar,
+.resource-box,
+footer {
+    display: grid;
 }
 
 .resource-box {
     border: 2px solid #ccc;
     padding: 15px;
     border-radius: 8px;
+    gap: 10px;
 }
 
-/* Large Screen Layout (Desktop) */
+footer {
+    justify-items: center;
+    padding: 20px 10px;
+}
+
+/* Tablet and larger */
 @media (min-width: 768px) {
-    .grid-container {
-        grid-template-columns: 2fr 1fr; /* 2 parts content, 1 part sidebar */
+    header {
+        grid-template-columns: auto 1fr;
+        grid-template-areas:
+            "logo title"
+            "logo tagline";
+        align-items: center;
+        justify-items: start;
+        text-align: left;
         max-width: 1000px;
         margin: 0 auto;
     }
 
+    header img {
+        grid-area: logo;
+    }
+
+    header h1 {
+        grid-area: title;
+        margin: 0;
+    }
+
+    header p {
+        grid-area: tagline;
+        margin: 0;
+    }
+
     nav ul {
-        display: flex; /* Nav stays flex for horizontal alignment */
-        list-style: none;
-        background-color: #446688;
-        padding: 10px;
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    nav li {
+        border-top: none;
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    nav li:first-child {
+        border-left: none;
+    }
+
+    .grid-container {
+        grid-template-columns: 2fr 1fr;
+        max-width: 1000px;
+        margin: 0 auto;
+        align-items: start;
     }
 }
